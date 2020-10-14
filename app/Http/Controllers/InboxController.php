@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 class InboxController extends Controller
 {
-    function index(){
+    protected $zone = '1,2';
+    function index(Request $request){
         $model=inboxModel::getAll();
+        //dd($request);
+        //dd($request->trangThai0);
         return view('index',compact('model'));
     }
     function create(){
@@ -50,7 +53,16 @@ class InboxController extends Controller
         $model=inboxModel::getOne($id);
         return view('update',compact('model'));
     }
-    function updateProcess(Request $request){
+    public function updateProcess(Request $request){
+        //validate
+
+        //save db
+        $this->zone = $request->has('zone') ? $request->get('zone') : $this->zone;
+        $payload = $request->all();
+        $payload['zone'] = $this->zone;
+
+        inboxModel::querey()->create($payload);
+
         $model=new inboxModel();
         $model->id=$request->id;
         $model->tieu_de=$request->tieuDe;
@@ -80,6 +92,12 @@ class InboxController extends Controller
     function show($id){
         $model=inboxModel::getOne($id);
         return view('show',compact('model'));
+    }
+    function search(Request $request){
+        $search=$request->timKiem;
+        $radio=$request->trangThai;
+        dd($search);
+
     }
 
 

@@ -24,7 +24,7 @@
                                     <font style="font-weight: bold">Tiêu đề:</font>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" name="tieuDe" class="form-control" placeholder="Nhập tên chiến dịch">
+                                    <input type="text" name="title" class="form-control" placeholder="Nhập tên chiến dịch">
                                 </div>
                             </div>
                             <div class="row" style="padding-top: 20px">
@@ -39,6 +39,7 @@
                                 <div class="col-2">
                                     <font style="font-weight: bold">Trạng Thái</font>
                                 </div>
+                            </div>
                                 <div class="col-8">
                                     Phiếu tạm
                                 </div>
@@ -48,7 +49,7 @@
                                     <font style="font-weight: bold">Nội dung</font>
                                 </div>
                                 <div class="col-8">
-                                    <textarea name="noiDung" class="form-control" placeholder="Nhập nội dung của chiến dịch" data-height="300px"></textarea>
+                                    <textarea name="description" class="form-control" placeholder="Nhập nội dung của chiến dịch" data-height="300px"></textarea>
                                 </div>
                             </div>
                             <div class="row" style="padding-top: 20px">
@@ -65,31 +66,30 @@
                                 </div>
                                 <div class="col-8">
                                     Hiển thị trên Zone (để trống  nếu hiển thị trên tất cả Zone)
-                                    <textarea name="hienThiTrenZone" class="form-control" placeholder="1,2,3,4,5,6,8,9,10,11,12,13,14,17,18"></textarea>
+                                    <textarea name="zone" class="form-control" placeholder="1,2,3,4,5,6,8,9,10,11,12,13,14,17,18"></textarea>
                                 </div>
                             </div>
                             <div class="row" style="padding-top: 20px">
                                 <div class="col-2">
-
                                 </div>
                                 <div class="col-8">
-                                    <input type="radio" name="phamVi" value="1" checked="checked">Tất cả các gian hàng đang hoạt động &nbsp;&nbsp;
-                                    <input type="radio" name="phamVi" value="2">Tất cả các gian hàng đang hoạt động đã trả tiền &nbsp;&nbsp;
-                                    <input type="radio" name="phamVi" value="3">Khác
+                                    <input type="radio" name="limit" value="1" checked="checked">Tất cả các gian hàng đang hoạt động &nbsp;&nbsp;
+                                    <input type="radio" name="limit" value="2">Tất cả các gian hàng đang hoạt động đã trả tiền &nbsp;&nbsp;
+                                    <input type="radio" name="limit" value="3">Khác
                                 </div>
                             </div>
                             <div class="row" style="padding-top: 20px">
                                 <div class="col-2"></div>
                                 <div class="col-8">
                                     Import CSV
-                                    <textarea name="importCSV" class="form-control" placeholder="66911, 549979 , 54445454, 5454545,"></textarea>
+                                    <textarea name="import_csv" class="form-control" placeholder="66911, 549979 , 54445454, 5454545,"></textarea>
                                 </div>
                             </div>
                             <div class="row" style="padding-top: 20px">
                                 <div class="col-2"></div>
                                 <div class="col-8">
                                     Không hiển thị với các gian hàng
-                                    <textarea name="khongHienThiVoiCacGianHang" class="form-control" placeholder="autotest,autotest59910"></textarea>
+                                    <textarea name="block" class="form-control" placeholder="autotest,autotest59910"></textarea>
                                 </div>
                             </div>
 
@@ -105,6 +105,7 @@
                         </form>
                     </div>
                 </div>
+        </center>
             </div>
         </center>
     </div>

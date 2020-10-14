@@ -9,21 +9,21 @@
                             <h4>Chi tiết chiến dịch gửi tin</h4>
                         </div>
                     </div>
-                    @foreach($model as $value)
+
                     <center style="padding-top: 50px">
 
                     <table class="table table-bordered">
                         <tr >
                             <td bgcolor="#57ffdb">Tiêu đề</td>
-                            <td>{{ $value->tieu_de }}</td>
+                            <td>{{ $model->title }}</td>
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Link</td>
-                            <td>{{ $value->link }}</td>
+                            <td>{{ $model->link }}</td>
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Trạng thái</td>
-                            @if($value->trang_thai==0)
+                            @if($model->status==0)
                                 <td>Lưu tạm</td>
                             @else
                                 <td>Đã gửi</td>
@@ -31,21 +31,21 @@
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Nội dung</td>
-                            <td>{{ $value->noi_dung }}</td>
+                            <td>{{ $model->description }}</td>
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Hiển thị tới ngày</td>
-                            <td>{{ $value->hien_thi_toi_ngay }}</td>
+                            <td>{{ $model->date }}</td>
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Hiển thị trên Zone</td>
-                            <td>{{ $value->hien_thi_tren_zone }}</td>
+                            <td>{{ $model->zone }}</td>
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Phạm vi gian hàng</td>
-                            @if($value->pham_vi_gian_hang==1)
+                            @if($model->limit==1)
                             <td>Tất cả gian hàng đang hoạt động</td>
-                                @elseif($value->pham_vi_gian_hang==2)
+                                @elseif($model->limit==2)
                             <td>Tất cả gian hàng đang hoạt động và đã trả tiền</td>
                                 @else
                             <td>Khác</td>
@@ -54,16 +54,16 @@
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Import CSV</td>
-                            <td>{{ $value->import_csv }}</td>
+                            <td>{{ $model->import_csv }}</td>
                         </tr>
                         <tr >
                             <td bgcolor="#57ffdb">Không hiển thị với các gian hàng</td>
-                            <td>{{ $value->khong_hien_thi_voi_cac_gian_hang }}</td>
+                            <td>{{ $model->block }}</td>
                         </tr>
                     </table>
 
                     </center>
-                    @endforeach
+
                 </div>
             </div>
         </center>

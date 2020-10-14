@@ -1,22 +1,29 @@
 @extends('layout')
 @section('content')
+    <script>
+        function test() {
+            const name = document.getElementById("trangThai2");
+            alert(name.value)
+        }
+    </script>
     <div class="card">
         <div class="card-header">
             <div class="row">
+
              <div class="col-2" >
                  <div class=""style="background-color: white" >
                  <div class="text-white bg-primary">
                  Tìm kiếm
                  </div>
-                 <input type="text" placeholder="Nhập tiêu đề.." name="timKiem">
+                 <input type="text" placeholder="Nhập tiêu đề.." name="key">
                  <div class="text-white bg-primary">
                      Trạng thái
                  </div>
-                 <input type="radio" checked="checked" name="trangThai" style="color: #4cff29">Tất cả
+                 <input type="radio"  name="status" style="color: #4cff29" value="2">Tất cả
                  <br>
-                 <input type="radio"name="trangThai"style="color: #4cff29" >Lưu tạm
+                 <input type="radio"name="status"style="color: #4cff29" value="0" >Lưu tạm
                  <br>
-                 <input type="radio" name="trangThai" style="color: #4cff29">Đã gửi
+                 <input type="radio" name="status" style="color: #4cff29" value="1">Đã gửi
                  <div class="text-white bg-primary">
                      Lựa chọn hiển thị
                  </div>
@@ -26,6 +33,7 @@
                  </select>
              </div>
             </div>
+
             <div class="col-10">
                 <h4 class="text-secondary">   Inbox Campaigns</h4>
                   <div class="text-right">
@@ -41,18 +49,17 @@
                     </tr>
                     @foreach($model as $value)
                         <tr>
-                            <td>{{ $value->tieu_de }}</td>
+                            <td>{{ $value->title }}</td>
                             <td>{{ $value->link }}</td>
-                            @if($value->trang_thai==0)
+                            @if($value->status==0)
                             <td>Lưu tạm</td>
                             @else
                                 <td>Đã gửi</td>
                             @endif
-                            <td>{{ $value->noi_dung }}</td>
+                            <td>{{ $value->description }}</td>
                             <td><a href="{{ route('update',['id'=>$value->id]) }}"> <i class="far fa-edit"></i></a>
                            <a href="{{ route('show',['id'=>$value->id]) }}"> <i class="far fa-eye"></i></a>
                            <a href="{{ route('destroy',['id'=>$value->id]) }}"> <i class="fas fa-trash"></i></a>
-
                             </td>
                         </tr>
                         @endforeach
