@@ -25,14 +25,15 @@ Route::get('/', function () {
 //Route::get('/destroy/{id}','InboxController@destroy')->name('destroy');
 //Route::get('search','InboxController@search')->name('search');
 
-Route::get('/index','Eloquent\inboxController@index')->name('index');
-Route::get('/show/{id}','Eloquent\inboxController@show')->name('show');
-Route::get('/create','Eloquent\inboxController@create')->name('create');
-Route::post('/create_process','Eloquent\inboxController@createProcess')->name('create_process');
-Route::get('/update/{id}','Eloquent\inboxController@update')->name('update');
-Route::post('/update_process/{id}','Eloquent\inboxController@updateProcess')->name('update_process');
-Route::get('/destroy/{id}','Eloquent\inboxController@destroy')->name('destroy');
-Route::get('search','InboxController@search')->name('search');
+Route::get('/index', 'Eloquent\inboxController@index')->name('index');
+Route::get('/show/{id}', 'Eloquent\inboxController@show')->name('show');
+Route::get('/create', 'Eloquent\inboxController@create')->name('create');
+Route::post('/create_process', 'Eloquent\inboxController@createProcess')->name('create_process');
+Route::get('/update/{id}', 'Eloquent\inboxController@update')->name('update');
+Route::post('/update_process/{id}', 'Eloquent\inboxController@updateProcess')->name('update_process');
+Route::get('/destroy/{id}', 'Eloquent\inboxController@destroy')->name('destroy');
+Route::get('check', 'Eloquent\inboxController@check')->name('check');
+
 
 
 
