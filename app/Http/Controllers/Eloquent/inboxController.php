@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Eloquent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\inboxRequest;
 use App\Model\inboxModel;
+use App\Model\Register;
 use DB;
 use Illuminate\Http\Request;
-
+use App\Jobs\SendWelcomeEmail;
 class inboxController extends Controller
 {
     protected $zone = '1,2,4,5,6,8,9,10,11,12,13,14,17,18';
@@ -68,6 +69,13 @@ class inboxController extends Controller
     {
         $model = inboxModel::query()->findOrFail($id);
         return view('show', ['model' => $model]);
+    }
+    public function register(Request $request){
+        $user=Register::query()->create($request->all());
+        $id=$user->id;
+      //  dd($id);
+        dispatch(new SendWelcomeEmail($id));
+        return view('welcome');
     }
 
 

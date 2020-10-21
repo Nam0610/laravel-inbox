@@ -116,9 +116,9 @@
                     </div>
                     <br>
                     <div class="text-right" style="margin-right: 250px">
-                        <button type="submit" class="btn btn-success">Gửi</button>
-                        <button class="btn btn-success">Lưu</button>
-                        <button type="reset" class="btn btn-success">Bỏ qua</button>
+                        <button type="submit" class="btn btn-success" value="1" name="btnSubmit">Gửi</button>
+                        <button type="submit" class="btn btn-success" value="2" name="btnSubmit" >Lưu</button>
+                        <button type="reset" class="btn btn-success" value="3">Bỏ qua</button>
                     </div>
                     </form>
                 </div>

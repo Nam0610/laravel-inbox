@@ -34,7 +34,11 @@ Route::post('/update_process/{id}', 'Eloquent\inboxController@updateProcess')->n
 Route::get('/destroy/{id}', 'Eloquent\inboxController@destroy')->name('destroy');
 Route::get('check', 'Eloquent\inboxController@check')->name('check');
 
-
+Route::get('/test', 'MailController@test');
+Route::get('/register', function () {
+    return view('register');
+});
+Route::post('/registerProcess','Eloquent\inboxController@register')->name('register');
 
 
 
